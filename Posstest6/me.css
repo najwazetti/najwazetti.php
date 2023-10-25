@@ -1,0 +1,75 @@
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  margin: 1rem;
+  padding: 5rem;
+  background-image: url(bgbio.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 1);
+}
+
+.profil {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.profil span {
+  color: rgb(99, 99, 169);
+}
+
+img {
+  max-width: 20%;
+  border-radius: 50%;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  padding: 1rem 5%;
+}
+
+footer .socials a {
+  color: #000000;
+}
+
+footer .socials a:hover {
+  color: rgb(87, 104, 201);
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 758px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 60%;
+  }
+}
