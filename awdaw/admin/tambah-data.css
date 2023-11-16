@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.margin-top-2 {
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 15px;
+}
+.form-group input[type="file"] {
+    border: 1px solid black;
+    padding: 0;
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.form-group input[type="file"]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 12px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-group input {
+    border-radius: 5px;
+    height: 40px;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+html,
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    background-color: #abacb2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 30px;
+    width: 100%;
+    height: 80px;
+}
+
+nav .navbar-text a {
+    text-decoration: none;
+    color: white;
+    background-color: #dc3545;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav img {
+    width: 200px;
+}
+
+.main {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+}
+
+.main .menu {
+    padding: 50px;
+    background-color: #32384b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.main .menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.main .content {
+    padding: 20px 40px;
+}
+
+.main .content h1 {
+    margin: 0;
+    color: #1f3377;
+}
+
+.main .content form .wrap {
+    gap: 20px;
+    display: flex;
+}
+
+.main .content form .gambar img {
+    width: 150px !important;
+}
+
+.main .content form .btn-tambah {
+    margin-top: 30px;
+    background-color: #198754;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}

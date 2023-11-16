@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservasi</title>
+    <!-- Sertakan pustaka datepicker jika diperlukan -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+    <form id="reservasiForm">
+        <label for="tanggalMulai">Tanggal Mulai:</label>
+        <input type="text" id="tanggalMulai" name="tanggalMulai">
+
+        <label for="lamaSewa">Lama Sewa (hari):</label>
+        <select id="lamaSewa" name="lamaSewa">
+            <option value="1">1 Hari</option>
+            <option value="2">2 Hari</option>
+            <option value="3">3 Hari</option>
+        </select>
+
+        <label for="tanggalSelesai">Tanggal Selesai:</label>
+        <input type="text" id="tanggalSelesai" name="tanggalSelesai" readonly>
+
+        <button type="submit">Reservasi</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function () {
+    $("#tanggalMulai").datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: 1, 
+        onSelect: function (selectedDate) {
+            var lamaSewa = parseInt($("#lamaSewa").val());
+            if (!isNaN(lamaSewa)) {
+                var mulai = new Date(selectedDate);
+                var selesai = new Date(mulai);
+                selesai.setDate(selesai.getDate() + lamaSewa);
+                $("#tanggalSelesai").datepicker("setDate", selesai);
+            }
+        }
+    });
+
+    $("#tanggalSelesai").datepicker({
+        dateFormat: "yy-mm-dd",
+        beforeShow: function (input, inst) {
+            inst.dpDiv.css({ display: 'none' });
+        }
+    });
+
+    $("#lamaSewa").change(function () {
+        var lamaSewa = parseInt($(this).val());
+        if (!isNaN(lamaSewa)) {
+            var mulai = $("#tanggalMulai").datepicker("getDate");
+            if (mulai !== null) {
+                var selesai = new Date(mulai);
+                selesai.setDate(selesai.getDate() + lamaSewa);
+                $("#tanggalSelesai").datepicker("setDate", selesai);
+            }
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
